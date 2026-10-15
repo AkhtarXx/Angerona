@@ -103,7 +103,7 @@ belongs in an appropriately contained lab.
 
 ## Tested behavior and limits
 
-The 2026-10-15 source-review qualification recorded **1,848 passed, zero failed,
+The 2026-10-15 fresh public-clone qualification recorded **1,851 passed, zero failed,
 38 skipped**. Forty new real behavior/archive edge cases ran, including Docker
 timeout cleanup. Actual Ghidra-recovered `add` code matched known source on
 **267 input pairs**, with **11 original machine-code calls** checked through GDB.

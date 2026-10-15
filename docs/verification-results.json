@@ -554,5 +554,299 @@
     "host_path_blobs_scrubbed": 17,
     "code_qualification": "full suite from fresh clone of proposed rewritten history",
     "workflow_policy": "rewrite commit skips push-triggered CI/deployment; future pushes retain configured behavior"
+  },
+  "public_release": {
+    "date": "2026-10-15",
+    "repository": "https://github.com/AkhtarXx/Angerona",
+    "source_commit": "1b645fc5ace06e2717e94197cd20578c9789b4e5",
+    "environment": "Ubuntu 24.04 / WSL2; Python 3.12; Ghidra, GCC, GDB, QEMU and Docker provisioned",
+    "backend": {
+      "counts": {
+        "tests": 1889,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 38,
+        "passed": 1851
+      },
+      "skipped": [
+        {
+          "test": "tests.test_sota_phase2::test_triage_on_real_elf",
+          "reason": "lbuz sample not present"
+        },
+        {
+          "test": "tests.test_sota_phase2::test_cli_sota_analyze_phase2_outputs",
+          "reason": "lbuz sample not present"
+        },
+        {
+          "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[claude]",
+          "reason": "claude or bubblewrap is unavailable"
+        },
+        {
+          "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[codex]",
+          "reason": "codex or bubblewrap is unavailable"
+        },
+        {
+          "test": "tests.test_angerona::test_convergence_loop_real_bindiff_gate",
+          "reason": "BinDiff/BinExport toolchain not provisioned"
+        },
+        {
+          "test": "tests.test_angerona::test_convergence_loop_recompile_verify_forces_needs_work",
+          "reason": "BinDiff/BinExport toolchain not provisioned"
+        },
+        {
+          "test": "tests.test_angerona::test_convergence_loop_claim_verify_forces_needs_work",
+          "reason": "BinDiff/BinExport toolchain not provisioned"
+        },
+        {
+          "test": "tests.test_angerona::test_idalib_mcp_initialize_handshake",
+          "reason": "ida-pro-mcp supervisor entrypoint not available"
+        },
+        {
+          "test": "tests.test_runtime_trace::test_qemu_tcg_plugin_loads_in_real_qemu",
+          "reason": "plugin-capable QEMU system emulator and gcc are required"
+        },
+        {
+          "test": "tests.test_runtime_trace::test_lldb_launch_plan_runs_real_binary",
+          "reason": "LLDB and gcc are required"
+        },
+        {
+          "test": "tests.test_sota_phase3::test_cli_sota_batch_on_real_binary",
+          "reason": "lbuz sample not present"
+        },
+        {
+          "test": "tests.test_sota_phase3::test_cli_full_re_no_ai_on_tiny_real_binary",
+          "reason": "Ghidra headless runtime not available for real smoke"
+        },
+        {
+          "test": "tests.test_android_audit::test_real_signal_audit_smoke",
+          "reason": "signal apk unavailable"
+        },
+        {
+          "test": "tests.test_bindiff::test_ghidra_export_and_self_diff_roundtrip",
+          "reason": "BinDiff/BinExport toolchain not provisioned"
+        },
+        {
+          "test": "tests.test_bindiff::test_mcp_bindiff_tools_registered_and_callable",
+          "reason": "BinDiff/BinExport toolchain not provisioned"
+        },
+        {
+          "test": "tests.test_android_runtime_manager::test_containment_receipt_self_minted_by_worker_is_rejected",
+          "reason": "test runner is root; non-root ownership cannot be exercised"
+        },
+        {
+          "test": "tests.test_jadx_bridge::test_real_apk_pipeline",
+          "reason": "requires a real Android APK on this host"
+        },
+        {
+          "test": "tests.test_apksigner_bridge::test_dual_signed_dummy",
+          "reason": "dummy not present"
+        },
+        {
+          "test": "tests.test_apktool_bridge::test_find_apktool_vendored",
+          "reason": "apktool not installed"
+        },
+        {
+          "test": "tests.test_apktool_bridge::test_decode_apk_real_run",
+          "reason": "apktool not installed"
+        },
+        {
+          "test": "tests.test_apktool_bridge::test_decode_apk_get_text_helper",
+          "reason": "apktool not installed"
+        },
+        {
+          "test": "tests.test_apktool_bridge::test_decode_apk_smali_dirs_without_skip_sources",
+          "reason": "apktool not installed"
+        },
+        {
+          "test": "tests.test_tls_stack_identifier::test_real_signal_identifies_rustls",
+          "reason": "signal not on disk"
+        },
+        {
+          "test": "tests.test_tls_stack_identifier::test_real_aegis_identifies_java_or_none",
+          "reason": "aegis not on disk"
+        },
+        {
+          "test": "tests.test_wss_cleartext_rule::test_real_apk_scan",
+          "reason": "signal unavailable"
+        },
+        {
+          "test": "tests.test_android_packer_db::test_real_signal_no_packer",
+          "reason": "signal apk unavailable"
+        },
+        {
+          "test": "tests.test_cross_package_chain_analyzer::test_real_roman_apps",
+          "reason": "need 2+ real APKs"
+        },
+        {
+          "test": "tests.test_mtls_tier_classifier::test_real_signal_no_mtls",
+          "reason": "signal unavailable"
+        },
+        {
+          "test": "tests.test_mtls_tier_classifier::test_real_aegis_no_mtls",
+          "reason": "aegis unavailable"
+        },
+        {
+          "test": "tests.test_browsable_implicits::test_real_signal_browsable",
+          "reason": "signal manifest unavailable"
+        },
+        {
+          "test": "tests.test_recall_driver::test_known_vuln_triggers_chain[/tmp/dummy_signed.apk]",
+          "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+        },
+        {
+          "test": "tests.test_recall_driver::test_known_vuln_chains_meet_minimum",
+          "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+        },
+        {
+          "test": "tests.test_recall_driver::test_clean_apps_fp_rate_zero",
+          "reason": "slow corpus test \u2014 opt-in only"
+        },
+        {
+          "test": "tests.test_solana_adapter_behavior::test_ghidra_solana_adapter_real_probe_passes",
+          "reason": "real Solana sample not present"
+        },
+        {
+          "test": "tests.test_solana_adapter_behavior::test_ida_solana_adapter_real_probe_passes_when_loader_available",
+          "reason": "real Solana sample not present"
+        },
+        {
+          "test": "tests.test_solana_adapter_behavior::test_ida_engine_uses_solana_loader_and_exports_syscall_imports",
+          "reason": "real Solana sample not present"
+        },
+        {
+          "test": "tests.test_radare2_mcp_provider::test_installed_radare2_mcp_speaks_stdio_and_hides_dangerous_tools",
+          "reason": "official radare2 MCP server is not installed"
+        },
+        {
+          "test": "tests.test_android_avd_integration::test_real_owned_avd_boot_frida_install_observe_and_destroy",
+          "reason": "set ANGERONA_RUN_ANDROID_AVD_E2E=1 on a KVM Android runner"
+        }
+      ]
+    },
+    "real_target_driver": {
+      "cases": 23,
+      "passed": 23,
+      "checks": [
+        {
+          "name": "build-c-fixture",
+          "passed": true
+        },
+        {
+          "name": "identify-system-true",
+          "passed": true
+        },
+        {
+          "name": "identify-system-printf",
+          "passed": true
+        },
+        {
+          "name": "identify-c-fixture",
+          "passed": true
+        },
+        {
+          "name": "ghidra-analyze-fixture",
+          "passed": true
+        },
+        {
+          "name": "ghidra-decompile-main",
+          "passed": true
+        },
+        {
+          "name": "ghidra-analyze-system",
+          "passed": true
+        },
+        {
+          "name": "ghidra-analyze-printf",
+          "passed": true
+        },
+        {
+          "name": "deterministic-batch",
+          "passed": true
+        },
+        {
+          "name": "full-re-no-ai",
+          "passed": true
+        },
+        {
+          "name": "full-re-resume",
+          "passed": true
+        },
+        {
+          "name": "structured-pseudocode",
+          "passed": true
+        },
+        {
+          "name": "function-summary",
+          "passed": true
+        },
+        {
+          "name": "control-flow-graph",
+          "passed": true
+        },
+        {
+          "name": "stack-frame-recovery",
+          "passed": true
+        },
+        {
+          "name": "compiler-detection",
+          "passed": true
+        },
+        {
+          "name": "sandboxed-static-analysis",
+          "passed": true
+        },
+        {
+          "name": "mcp-stdio",
+          "passed": true
+        },
+        {
+          "name": "web-batch-artifacts",
+          "passed": true
+        },
+        {
+          "name": "behavior-equivalent",
+          "passed": true
+        },
+        {
+          "name": "behavior-divergent",
+          "passed": true
+        },
+        {
+          "name": "native-appcall",
+          "passed": true
+        },
+        {
+          "name": "docker-detonation",
+          "passed": true
+        }
+      ]
+    },
+    "hosted_ci": {
+      "url": "https://github.com/AkhtarXx/Angerona/actions/runs/38766903639",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "package",
+          "conclusion": "success"
+        },
+        {
+          "name": "test (3.11, dev,emulation,symbols)",
+          "conclusion": "success"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "success"
+        },
+        {
+          "name": "test (3.12, dev,emulation,symbols,lifting,symbolic)",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "evidence_sha256": {
+      "public-backend-final.xml": "f8a433377a06b07b064abd14aeaca945065d0b8915d8960cd2240180a9ad12ae",
+      "public-e2e-final-results.json": "a4b0879d025206365412ec9ea6f75cba4fd7d43f84677b9a2ab0779fc1dc786d"
+    }
   }
 }

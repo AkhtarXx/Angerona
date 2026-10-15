@@ -11,6 +11,9 @@ workspaces are intentionally excluded from the review archive.
 
 | Check | Result and scope |
 | --- | --- |
+| Fresh public clone after publication fixes | **1,851 passed, 0 failed, 38 skipped**, 1,889 cases; 211.80 seconds; source `1b645fc` |
+| Latest public CLI real targets | **23/23 passed**: system ELF/source fixtures, Ghidra, full-re/resume, CFG/stack frames, sandboxed static analysis, MCP, HTTP and Docker; source `1b645fc` |
+| Public hosted CI | Python 3.11 compatibility, Python 3.12 full integrations, frontend and wheel/package jobs [all passed](https://github.com/AkhtarXx/Angerona/actions/runs/38766903639) |
 | Provisioned backend | **1,848 passed, 0 failed, 38 skipped**, 1,886 cases; 207.49 seconds |
 | Real edge cases | **40 passed**: compiled behavior, GDB, Docker, ZIP failure boundaries |
 | Runtime/edge subset | **116 passed, 2 skipped**; includes fast-exit count/byte regressions |
