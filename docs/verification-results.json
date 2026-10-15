@@ -1,0 +1,558 @@
+{
+  "backend": {
+    "counts": {
+      "tests": 1886,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 38,
+      "passed": 1848
+    },
+    "duration_seconds": 189.298,
+    "skipped": [
+      {
+        "test": "tests.test_sota_phase2::test_triage_on_real_elf",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_sota_phase2::test_cli_sota_analyze_phase2_outputs",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[claude]",
+        "reason": "claude or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[codex]",
+        "reason": "codex or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_real_bindiff_gate",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_recompile_verify_forces_needs_work",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_claim_verify_forces_needs_work",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_idalib_mcp_initialize_handshake",
+        "reason": "ida-pro-mcp supervisor entrypoint not available"
+      },
+      {
+        "test": "tests.test_sota_phase3::test_cli_sota_batch_on_real_binary",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_sota_phase3::test_cli_full_re_no_ai_on_tiny_real_binary",
+        "reason": "Ghidra headless runtime not available for real smoke"
+      },
+      {
+        "test": "tests.test_runtime_trace::test_qemu_tcg_plugin_loads_in_real_qemu",
+        "reason": "plugin-capable QEMU system emulator and gcc are required"
+      },
+      {
+        "test": "tests.test_runtime_trace::test_lldb_launch_plan_runs_real_binary",
+        "reason": "LLDB and gcc are required"
+      },
+      {
+        "test": "tests.test_android_audit::test_real_signal_audit_smoke",
+        "reason": "signal apk unavailable"
+      },
+      {
+        "test": "tests.test_bindiff::test_ghidra_export_and_self_diff_roundtrip",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_bindiff::test_mcp_bindiff_tools_registered_and_callable",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_jadx_bridge::test_real_apk_pipeline",
+        "reason": "requires a real Android APK on this host"
+      },
+      {
+        "test": "tests.test_android_runtime_manager::test_containment_receipt_self_minted_by_worker_is_rejected",
+        "reason": "test runner is root; non-root ownership cannot be exercised"
+      },
+      {
+        "test": "tests.test_apksigner_bridge::test_dual_signed_dummy",
+        "reason": "dummy not present"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_find_apktool_vendored",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_real_run",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_get_text_helper",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_smali_dirs_without_skip_sources",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_tls_stack_identifier::test_real_signal_identifies_rustls",
+        "reason": "signal not on disk"
+      },
+      {
+        "test": "tests.test_tls_stack_identifier::test_real_aegis_identifies_java_or_none",
+        "reason": "aegis not on disk"
+      },
+      {
+        "test": "tests.test_wss_cleartext_rule::test_real_apk_scan",
+        "reason": "signal unavailable"
+      },
+      {
+        "test": "tests.test_android_packer_db::test_real_signal_no_packer",
+        "reason": "signal apk unavailable"
+      },
+      {
+        "test": "tests.test_cross_package_chain_analyzer::test_real_roman_apps",
+        "reason": "need 2+ real APKs"
+      },
+      {
+        "test": "tests.test_mtls_tier_classifier::test_real_signal_no_mtls",
+        "reason": "signal unavailable"
+      },
+      {
+        "test": "tests.test_mtls_tier_classifier::test_real_aegis_no_mtls",
+        "reason": "aegis unavailable"
+      },
+      {
+        "test": "tests.test_browsable_implicits::test_real_signal_browsable",
+        "reason": "signal manifest unavailable"
+      },
+      {
+        "test": "tests.test_recall_driver::test_known_vuln_triggers_chain[/tmp/dummy_signed.apk]",
+        "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+      },
+      {
+        "test": "tests.test_recall_driver::test_known_vuln_chains_meet_minimum",
+        "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+      },
+      {
+        "test": "tests.test_recall_driver::test_clean_apps_fp_rate_zero",
+        "reason": "slow corpus test \u2014 opt-in only"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ghidra_solana_adapter_real_probe_passes",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ida_solana_adapter_real_probe_passes_when_loader_available",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ida_engine_uses_solana_loader_and_exports_syscall_imports",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_radare2_mcp_provider::test_installed_radare2_mcp_speaks_stdio_and_hides_dangerous_tools",
+        "reason": "official radare2 MCP server is not installed"
+      },
+      {
+        "test": "tests.test_android_avd_integration::test_real_owned_avd_boot_frida_install_observe_and_destroy",
+        "reason": "set ANGERONA_RUN_ANDROID_AVD_E2E=1 on a KVM Android runner"
+      }
+    ]
+  },
+  "targeted": {
+    "counts": {
+      "tests": 118,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 116
+    },
+    "duration_seconds": 88.981,
+    "skipped": [
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[claude]",
+        "reason": "claude or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[codex]",
+        "reason": "codex or bubblewrap is unavailable"
+      }
+    ]
+  },
+  "new_real_edge_cases": 40,
+  "installed_behavior_passed": true,
+  "installed_full_re_stages": 8,
+  "recovered_function_passed": true,
+  "qualification_date": "2026-10-15",
+  "scope": "Source-review backend qualification; earlier target/installed-wheel checks retain their recorded snapshot scope.",
+  "local_evidence_sha256": {
+    "verification/behavior-edges/backend-verified.xml": "4d0ae08b920ae29801ef88807d1238861127d35f7a89fba40b3c1f547d77a36d",
+    "verification/behavior-edges/recovered-add/results.json": "c1042acb8032eb48db68d24b3bddb2f27dcb476d6b63b63a71bc4de45c322491",
+    "verification/behavior-edges/installed-wheel-full-re.json": "b0bfc65ab635ddcf878047dee7886cb616a72f4033f619fda2ac6938c7b4c0ef",
+    "verification/behavior-edges/manifest.json": "363a57967d8258f3a6cc328c0f1746ad58d175f6f728bac8d67a7dc4b9c7f0c8",
+    "verification/share-preparation/share-final-backend.xml": "6c78fbc04f728e52130e9b45c0c45953f0736cd808498948f4880a2634fd8afc",
+    "verification/share-preparation/windows-privacy-final.xml": "d748e9ac00c5bde8af037d2f8ec40310de7e4f94cdaa305f5348c89e89053420",
+    "verification/share-preparation/frontend-check-final.log": "e92ec3e58fe4e0f2f012d6328d7d5a702236a1ad53613bec411dd1cec1224363",
+    "verification/share-preparation/frontend-browser-final.log": "4d95a9e028b7c4e0bd3ec534d2693fbe57e4f6cb87b7f2e3b26a17a66586c98f",
+    "verification/share-preparation/frontend-dependencies-final.json": "2b678f3582907c01ee0f965bda8db9728b3cf36279ce34089e5db0ef850a2b01",
+    "verification/history-cleanup-20261015/backend.xml": "4a67c8e1442a6840c3cb81adbf4fc996382b51da596d4a1d100588e9bb1d5ee5",
+    "verification/history-cleanup-20261015/history-structure-audit.json": "60bccf12adc97467ef8376deb75c688e5120ba3d41577d9f1abe6b01c7716c30",
+    "verification/history-cleanup-20261015/history-audit.log": "d7912b0a515142761c0119ea2f8da6ef8dca72ffc332b9a0757f7f478b66c599"
+  },
+  "prior_engine_backend": {
+    "counts": {
+      "tests": 1863,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 38,
+      "passed": 1825
+    },
+    "duration_seconds": 188.339,
+    "skipped": [
+      {
+        "test": "tests.test_sota_phase2::test_triage_on_real_elf",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_sota_phase2::test_cli_sota_analyze_phase2_outputs",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[claude]",
+        "reason": "claude or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[codex]",
+        "reason": "codex or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_real_bindiff_gate",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_recompile_verify_forces_needs_work",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_claim_verify_forces_needs_work",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_idalib_mcp_initialize_handshake",
+        "reason": "ida-pro-mcp supervisor entrypoint not available"
+      },
+      {
+        "test": "tests.test_sota_phase3::test_cli_sota_batch_on_real_binary",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_sota_phase3::test_cli_full_re_no_ai_on_tiny_real_binary",
+        "reason": "Ghidra headless runtime not available for real smoke"
+      },
+      {
+        "test": "tests.test_runtime_trace::test_qemu_tcg_plugin_loads_in_real_qemu",
+        "reason": "plugin-capable QEMU system emulator and gcc are required"
+      },
+      {
+        "test": "tests.test_runtime_trace::test_lldb_launch_plan_runs_real_binary",
+        "reason": "LLDB and gcc are required"
+      },
+      {
+        "test": "tests.test_android_audit::test_real_signal_audit_smoke",
+        "reason": "signal apk unavailable"
+      },
+      {
+        "test": "tests.test_bindiff::test_ghidra_export_and_self_diff_roundtrip",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_bindiff::test_mcp_bindiff_tools_registered_and_callable",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_jadx_bridge::test_real_apk_pipeline",
+        "reason": "requires a real Android APK on this host"
+      },
+      {
+        "test": "tests.test_apksigner_bridge::test_dual_signed_dummy",
+        "reason": "dummy not present"
+      },
+      {
+        "test": "tests.test_android_runtime_manager::test_containment_receipt_self_minted_by_worker_is_rejected",
+        "reason": "test runner is root; non-root ownership cannot be exercised"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_find_apktool_vendored",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_real_run",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_get_text_helper",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_smali_dirs_without_skip_sources",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_tls_stack_identifier::test_real_signal_identifies_rustls",
+        "reason": "signal not on disk"
+      },
+      {
+        "test": "tests.test_tls_stack_identifier::test_real_aegis_identifies_java_or_none",
+        "reason": "aegis not on disk"
+      },
+      {
+        "test": "tests.test_wss_cleartext_rule::test_real_apk_scan",
+        "reason": "signal unavailable"
+      },
+      {
+        "test": "tests.test_android_packer_db::test_real_signal_no_packer",
+        "reason": "signal apk unavailable"
+      },
+      {
+        "test": "tests.test_cross_package_chain_analyzer::test_real_roman_apps",
+        "reason": "need 2+ real APKs"
+      },
+      {
+        "test": "tests.test_mtls_tier_classifier::test_real_signal_no_mtls",
+        "reason": "signal unavailable"
+      },
+      {
+        "test": "tests.test_mtls_tier_classifier::test_real_aegis_no_mtls",
+        "reason": "aegis unavailable"
+      },
+      {
+        "test": "tests.test_browsable_implicits::test_real_signal_browsable",
+        "reason": "signal manifest unavailable"
+      },
+      {
+        "test": "tests.test_recall_driver::test_known_vuln_triggers_chain[/tmp/dummy_signed.apk]",
+        "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+      },
+      {
+        "test": "tests.test_recall_driver::test_known_vuln_chains_meet_minimum",
+        "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+      },
+      {
+        "test": "tests.test_recall_driver::test_clean_apps_fp_rate_zero",
+        "reason": "slow corpus test \u2014 opt-in only"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ghidra_solana_adapter_real_probe_passes",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ida_solana_adapter_real_probe_passes_when_loader_available",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ida_engine_uses_solana_loader_and_exports_syscall_imports",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_radare2_mcp_provider::test_installed_radare2_mcp_speaks_stdio_and_hides_dangerous_tools",
+        "reason": "official radare2 MCP server is not installed"
+      },
+      {
+        "test": "tests.test_android_avd_integration::test_real_owned_avd_boot_frida_install_observe_and_destroy",
+        "reason": "set ANGERONA_RUN_ANDROID_AVD_E2E=1 on a KVM Android runner"
+      }
+    ]
+  },
+  "source_review_checks": {
+    "privacy_cases": 20,
+    "frontend_browser_passed": 22,
+    "frontend_lint_build": "passed",
+    "npm_known_vulnerabilities": 0,
+    "windows_privacy_and_docs": {
+      "passed": 25,
+      "skipped": 1,
+      "reason": "symlink creation unavailable"
+    },
+    "source_export_scan": "no unresolved credential-pattern matches",
+    "git_policy_probes_ignored": 14,
+    "ci_status": "configuration updated; remote workflow not executed"
+  },
+  "previous_source_review_backend": {
+    "counts": {
+      "tests": 1883,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 38,
+      "passed": 1845
+    },
+    "duration_seconds": 207.487,
+    "skipped": [
+      {
+        "test": "tests.test_sota_phase2::test_triage_on_real_elf",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_sota_phase2::test_cli_sota_analyze_phase2_outputs",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[claude]",
+        "reason": "claude or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_runtime_buffering::test_required_sandbox_launches_resolved_real_provider_executable[codex]",
+        "reason": "codex or bubblewrap is unavailable"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_real_bindiff_gate",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_recompile_verify_forces_needs_work",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_convergence_loop_claim_verify_forces_needs_work",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_angerona::test_idalib_mcp_initialize_handshake",
+        "reason": "ida-pro-mcp supervisor entrypoint not available"
+      },
+      {
+        "test": "tests.test_runtime_trace::test_qemu_tcg_plugin_loads_in_real_qemu",
+        "reason": "plugin-capable QEMU system emulator and gcc are required"
+      },
+      {
+        "test": "tests.test_runtime_trace::test_lldb_launch_plan_runs_real_binary",
+        "reason": "LLDB and gcc are required"
+      },
+      {
+        "test": "tests.test_sota_phase3::test_cli_sota_batch_on_real_binary",
+        "reason": "lbuz sample not present"
+      },
+      {
+        "test": "tests.test_sota_phase3::test_cli_full_re_no_ai_on_tiny_real_binary",
+        "reason": "Ghidra headless runtime not available for real smoke"
+      },
+      {
+        "test": "tests.test_android_audit::test_real_signal_audit_smoke",
+        "reason": "signal apk unavailable"
+      },
+      {
+        "test": "tests.test_bindiff::test_ghidra_export_and_self_diff_roundtrip",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_bindiff::test_mcp_bindiff_tools_registered_and_callable",
+        "reason": "BinDiff/BinExport toolchain not provisioned"
+      },
+      {
+        "test": "tests.test_android_runtime_manager::test_containment_receipt_self_minted_by_worker_is_rejected",
+        "reason": "test runner is root; non-root ownership cannot be exercised"
+      },
+      {
+        "test": "tests.test_jadx_bridge::test_real_apk_pipeline",
+        "reason": "requires a real Android APK on this host"
+      },
+      {
+        "test": "tests.test_apksigner_bridge::test_dual_signed_dummy",
+        "reason": "dummy not present"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_find_apktool_vendored",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_real_run",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_get_text_helper",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_apktool_bridge::test_decode_apk_smali_dirs_without_skip_sources",
+        "reason": "apktool not installed"
+      },
+      {
+        "test": "tests.test_tls_stack_identifier::test_real_signal_identifies_rustls",
+        "reason": "signal not on disk"
+      },
+      {
+        "test": "tests.test_tls_stack_identifier::test_real_aegis_identifies_java_or_none",
+        "reason": "aegis not on disk"
+      },
+      {
+        "test": "tests.test_wss_cleartext_rule::test_real_apk_scan",
+        "reason": "signal unavailable"
+      },
+      {
+        "test": "tests.test_android_packer_db::test_real_signal_no_packer",
+        "reason": "signal apk unavailable"
+      },
+      {
+        "test": "tests.test_cross_package_chain_analyzer::test_real_roman_apps",
+        "reason": "need 2+ real APKs"
+      },
+      {
+        "test": "tests.test_mtls_tier_classifier::test_real_signal_no_mtls",
+        "reason": "signal unavailable"
+      },
+      {
+        "test": "tests.test_mtls_tier_classifier::test_real_aegis_no_mtls",
+        "reason": "aegis unavailable"
+      },
+      {
+        "test": "tests.test_browsable_implicits::test_real_signal_browsable",
+        "reason": "signal manifest unavailable"
+      },
+      {
+        "test": "tests.test_recall_driver::test_known_vuln_triggers_chain[/tmp/dummy_signed.apk]",
+        "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+      },
+      {
+        "test": "tests.test_recall_driver::test_known_vuln_chains_meet_minimum",
+        "reason": "planted-vuln app missing: /tmp/dummy_signed.apk"
+      },
+      {
+        "test": "tests.test_recall_driver::test_clean_apps_fp_rate_zero",
+        "reason": "slow corpus test \u2014 opt-in only"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ghidra_solana_adapter_real_probe_passes",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ida_solana_adapter_real_probe_passes_when_loader_available",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_solana_adapter_behavior::test_ida_engine_uses_solana_loader_and_exports_syscall_imports",
+        "reason": "real Solana sample not present"
+      },
+      {
+        "test": "tests.test_radare2_mcp_provider::test_installed_radare2_mcp_speaks_stdio_and_hides_dangerous_tools",
+        "reason": "official radare2 MCP server is not installed"
+      },
+      {
+        "test": "tests.test_android_avd_integration::test_real_owned_avd_boot_frida_install_observe_and_destroy",
+        "reason": "set ANGERONA_RUN_ANDROID_AVD_E2E=1 on a KVM Android runner"
+      }
+    ]
+  },
+  "history_cleanup": {
+    "historical_paths_removed": 97,
+    "original_remote_commits": 109,
+    "filtered_commits": 103,
+    "published_candidate_commits": 104,
+    "author_committer_contact_metadata": "generic project identity",
+    "host_path_blobs_scrubbed": 17,
+    "code_qualification": "full suite from fresh clone of proposed rewritten history",
+    "workflow_policy": "rewrite commit skips push-triggered CI/deployment; future pushes retain configured behavior"
+  }
+}

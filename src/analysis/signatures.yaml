@@ -1,0 +1,96 @@
+# Format signature DB for the universal format detector.
+# Corrected PRONOM PUIDs per the vetted research (format-detection_vetted.md);
+# historical mistakes (PE fmt/462, ZIP fmt/289, PDF fmt/20) are annotated.
+
+# Each entry: name, family, magic (hex or ASCII), offset (int or "eocd": look for
+# the record scanning backward), variant, confidence, puid (optional PRONOM id),
+# polyrank (primary-preference rank for polyglot resolution; lower wins).
+signatures:
+  # Native binaries
+  - {name: "ELF (32/64 LE/BE)", family: "elf", magic: "7f454c46", offset: 0,
+     variant: "elf", confidence: 1.0, puid: "fmt/689", polyrank: 10}
+  - {name: "PE (Windows)", family: "pe", magic: "4d5a", offset: 0,
+     variant: "pe", confidence: 1.0, puid: "fmt/899", polyrank: 5}
+  - {name: "Mach-O (thin LE)", family: "macho", magic: "cffaedfe", offset: 0,
+     variant: "macho-le-64", confidence: 1.0, polyrank: 10}
+  - {name: "Mach-O (thin BE)", family: "macho", magic: "feedfacf", offset: 0,
+     variant: "macho-be-64", confidence: 1.0, polyrank: 10}
+  - {name: "Mach-O universal/fat", family: "macho_fat", magic: "cafebabe", offset: 0,
+     variant: "fat", confidence: 1.0, polyrank: 8}
+
+  # Managed bytecode
+  - {name: "Dalvik DEX", family: "dex", magic: "6465780a", offset: 0,
+     variant: "dex", confidence: 1.0, puid: "fmt/694", polyrank: 12}
+  - {name: "Java class", family: "jvm", magic: "cafebabe", offset: 0,
+     variant: "class", confidence: 1.0, polyrank: 12}
+  - {name: ".NET assembly (PE)", family: "cil", magic: "4d5a", offset: 0,
+     variant: "dotnet-pe", confidence: 1.0, polyrank: 5,
+     note: "pe with CLR header; further probe during detect()"}
+  - {name: "Lua 5.1 bytecode", family: "lua", magic: "1b4c7561", offset: 0,
+     variant: "lua51", confidence: 0.95, polyrank: 15,
+     note: "byte 4 == 0x01 for 5.1; per-version decoded at load time"}
+  - {name: "Python .pyc (3.7+ version-prefix heuristic)", family: "pyc",
+     magic: "pyc-prefix", offset: 0, variant: "pyc", confidence: 0.7, polyrank: 15,
+     note: "magic varies per CPython version; detected via structural heuristic (bytes 2-4 = 0d0a + version range)"}
+  - {name: "WebAssembly", family: "wasm", magic: "0061736d", offset: 0,
+     variant: "wasm", confidence: 1.0, puid: "fmt/940", polyrank: 12}
+  - {name: "Erlang BEAM", family: "beam", magic: "464f5231", offset: 0,
+     variant: "beam", confidence: 1.0, polyrank: 14,
+     note: "IFF FOR1; 'BEAM' marker at +8"}
+
+  # Archives/containers
+  - {name: "ZIP (APK/JAR/DOCX)", family: "zip", magic: "504b0304", offset: 0,
+     variant: "zip", confidence: 1.0, puid: "x-fmt/263", polyrank: 20}
+  - {name: "Gzip", family: "gzip", magic: "1f8b", offset: 0,
+     variant: "gzip", confidence: 1.0, puid: "x-fmt/266", polyrank: 22}
+  - {name: "SquashFS LE", family: "squashfs", magic: "68737173", offset: 0,
+     variant: "squashfs-le", confidence: 1.0, polyrank: 18}
+  - {name: "SquashFS BE/streamed", family: "squashfs", magic: "73687173",
+     offset: 0, variant: "squashfs-streamed", confidence: 1.0, polyrank: 18}
+  - {name: "UBI/UBIFS", family: "ubifs", magic: "55424923", offset: 0,
+     variant: "ubi#", confidence: 1.0, polyrank: 18}
+  - {name: "UBI erase hdr", family: "ubifs", magic: "55424921", offset: 0,
+     variant: "ubi!", confidence: 1.0, polyrank: 18}
+  - {name: "U-Boot uImage", family: "uimage", magic: "27051956", offset: 0,
+     variant: "uimage", confidence: 1.0, polyrank: 16}
+  - {name: "Fit image (FDT)", family: "fit", magic: "d00dfeed", offset: 0,
+     variant: "fdt", confidence: 1.0, polyrank: 16,
+     note: "spec d0 0d fe ed"}
+  - {name: "OLE2 compound", family: "ole2", magic: "d0cf11e0a1b11ae1", offset: 0,
+     variant: "ole2", confidence: 1.0, puid: "fmt/111", polyrank: 22}
+  - {name: "WIM", family: "wim", magic: "4d5357494d00", offset: 0,
+     variant: "wim", confidence: 1.0, polyrank: 22}
+  - {name: "Android sparse", family: "android_sparse", magic: "3aff26ed", offset: 0,
+     variant: "sparse", confidence: 1.0, polyrank: 18}
+  - {name: "ISO9660", family: "iso9660", magic: "4344303031", offset: 32769,
+     variant: "cd001", confidence: 1.0, polyrank: 30,
+     note: "'CD001' at 0x8001 = primary volume descriptor"}
+
+  # Raw blobs / weird headers
+  - {name: "Intel HEX", family: "ihex", magic: "3a", offset: 0,
+     variant: "ihex", confidence: 0.9, polyrank: 40,
+     note: "':' starts each record; needs row regex"}
+  - {name: "Motorola S-Record", family: "srec", magic: "53", offset: 0,
+     variant: "srec", confidence: 0.9, polyrank: 40,
+     note: "'S' + type digit; needs row regex"}
+  - {name: "Game Boy ROM", family: "gb_rom", magic: "01000100", offset: 0x104,
+     variant: "gb_rom", confidence: 0.95, polyrank: 30,
+     note: "Nintendo logo at 0x104..0x133"}
+  - {name: "NES ROM", family: "nes_rom", magic: "4e45531a", offset: 0,
+     variant: "ines", confidence: 1.0, polyrank: 30}
+  - {name: "COM / DOS stub", family: "com", magic: "e9", offset: 0,
+     variant: "com", confidence: 0.6, polyrank: 50,
+     note: "0xE9 (jmp rel16) — signature-light, low confidence"}
+
+  # Compressed blobs (unsure if hostile)
+  - {name: "LZ4 frame", family: "lz4", magic: "04224d18", offset: 0,
+     variant: "lz4", confidence: 1.0, puid: "x-fmt/3", polyrank: 22}
+  - {name: "bzip2", family: "bz2", magic: "425a68", offset: 0,
+     variant: "bz2", confidence: 1.0, puid: "x-fmt/261", polyrank: 22}
+  - {name: "LZO", family: "lzo", magic: "894c5a4f000d0a1a0a", offset: 0,
+     variant: "lzo", confidence: 1.0, polyrank: 22}
+  - {name: "pgp armor", family: "pgp_armor", magic: "2d2d2d2d2d424547494e",
+     offset: 0, variant: "armor", confidence: 0.95, polyrank: 25}
+
+  # CID/Encrypted lookalike (returns family=encrypted-blob via sniff)
+  # not a magic — handled by the statistical sniffer (high entropy + no magic).

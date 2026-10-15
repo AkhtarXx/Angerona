@@ -1,0 +1,25 @@
+{
+  "apk_path": "/tmp/dummy_signed.apk",
+  "status": "completed",
+  "provenance_verdict": "unknown_app",
+  "packer_verdict": "none",
+  "tls_stack": "conscrypt_java",
+  "runtime_extract_status": "skipped",
+  "findings_count": 8,
+  "chain_count": 1,
+  "verdicts": {"LIKELY": 5, "CONFIRMED": 2, "INCONCLUSIVE": 1},
+  "chains": [
+    {
+      "chain_id": "backup_exfiltration",
+      "severity": "high",
+      "verdict": "CONFIRMED",
+      "links": [
+        "allow_backup_check:allow-backup-true",
+        "allow_backup_check:no-backup-rules",
+        "contentprovider_traversal:exported-provider"
+      ]
+    }
+  ],
+  "replay_bundles_signed": false,
+  "note": "This is a FIXED reference artifact — stored under tests/replay_artifacts/ for deterministic regression testing. Real audits replace this with corpus output."
+}

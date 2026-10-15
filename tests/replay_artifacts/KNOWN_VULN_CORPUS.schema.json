@@ -1,0 +1,30 @@
+{
+  "schema": "angerona.corpus.v1",
+  "description": "Reference corpus for chain-scorer recall tests: apps with intentionally planted vulns — chains MUST fire (true positives).",
+  "apps": [
+    {
+      "name": "dummy_signed.apk — Angerona synthetic malicious app (planted vulns)",
+      "path": "/tmp/dummy_signed.apk",
+      "planted_vulns": [
+        "allowBackup=true without dataExtractionRules",
+        "BROWSABLE deeplink with no autoVerify/allowlist",
+        "exported provider with grant-uri permissions",
+        "implicit-deep-link DeppActivity exported",
+        "hardcoded AWS/Google keys",
+        "WebView addJavascriptInterface",
+        "TrustAll TLS",
+        "cleartext HTTP",
+        "su/Magisk strings",
+        "DexClassLoader dynamic loading",
+        "Log sensitive data",
+        "native .so anti-tamper + secrets"
+      ],
+      "expected_chains_minimum": 1
+    }
+  ],
+  "expected_behavior": {
+    "false_negatives": 0,
+    "minimum_chains": 1,
+    "note": "Apps with planted vulns MUST trigger at least one chain template. Zero chains = missed detection (false negative)."
+  }
+}

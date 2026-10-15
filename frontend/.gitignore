@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.playwright-mcp
+playwright-report
+test-results
+audit-output
+.openai/
+pitch-deck/.compact-pages
+pitch-deck/*.pdf
+pitch-deck/*.pptx
+*-scaled.jpg
+*-web.jpg
+desktop-v*.jpg
+mobile-v*.jpg
+
+# Local creative/research material. These files are not part of the public site
+# or its deployable source package.
+design.md
+designtokens.md
+pitch-deck/
+brand-assets/
+src/lib/recovered.ts
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

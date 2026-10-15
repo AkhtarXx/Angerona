@@ -1,0 +1,28 @@
+#!/bin/sh
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+
+python scripts/check_git_hygiene.py --staged
+
+# Generated docs describe the complete source tree. Never stage unrelated work.
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+changed=$(git diff --name-only --diff-filter=ACMR)
+for path in $staged; do
+    case "$path" in
+        src/*|tests/*|scripts/*|frontend/*|benchmarks/*)
+            if printf '%s\n' "$changed" | grep -Fx -- "$path" >/dev/null; then
+                echo "codebase-docs: refusing partial source staging: $path" >&2
+                exit 1
+            fi
+            ;;
+    esac
+done
+
+if [ "${ANGERONA_REFRESH_CODEBASE_DOCS:-0}" = "1" ]; then
+    python scripts/update_codebase_docs.py
+    python scripts/update_codebase_docs.py --check
+    if ! git diff --quiet -- MEMORY.md docs/codebase/README.md docs/codebase/SYMBOL_REFERENCE.md; then
+        echo "codebase-docs: stage semantic catalog changes before committing" >&2
+        exit 1
+    fi
+fi

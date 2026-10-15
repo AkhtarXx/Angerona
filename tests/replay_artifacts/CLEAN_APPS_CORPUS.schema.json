@@ -1,0 +1,35 @@
+{
+  "schema": "angerona.corpus.v1",
+  "description": "Reference corpus for chain-scorer recall tests: apps that should NOT trigger chains (FP rate = 0).",
+  "apps": [
+    {
+      "name": "Signal 8.20.5 (production hardened app)",
+      "source": "https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.20.5.apk",
+      "sha256": "ee9bb40937638e36935edac43463a4d3d90a87c836e0f9852d3300d03e4c53a5",
+      "expected_chains": 0
+    },
+    {
+      "name": "Aegis Authenticator (security-conscious OTP)",
+      "source": "https://f-droid.org/repo/com.beemdevelopment.aegis_81.apk",
+      "sha256": "placeholder",
+      "expected_chains": 0
+    },
+    {
+      "name": "Bitcoin Wallet (Schildbach)",
+      "source": "https://f-droid.org/repo/de.schildbach.wallet_110300.apk",
+      "sha256": "placeholder",
+      "expected_chains": 0
+    },
+    {
+      "name": "Electrum (Bitcoin client)",
+      "source": "https://f-droid.org/repo/org.electrum.electrum_45408004.apk",
+      "sha256": "placeholder",
+      "expected_chains": 0
+    }
+  ],
+  "expected_behavior": {
+    "false_positives": 0,
+    "chains_called_out": [],
+    "note": "Clean production apps should not trigger any attack-chain template. Any chain here = false positive."
+  }
+}

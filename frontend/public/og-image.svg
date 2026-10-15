@@ -1,0 +1,40 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brand-stroke" x1="98" y1="398" x2="322" y2="174" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3DE1E8"/>
+      <stop offset="0.46" stop-color="#B873FF"/>
+      <stop offset="1" stop-color="#F5B73D"/>
+    </linearGradient>
+    <radialGradient id="cyan-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 130) rotate(118) scale(560 430)">
+      <stop stop-color="#3DE1E8" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#080418" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violet-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 610) rotate(-62) scale(620 430)">
+      <stop stop-color="#9A4DFF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#080418" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#F6F4F0" stroke-opacity="0.045"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#080418"/>
+  <rect width="1200" height="630" fill="url(#cyan-glow)"/>
+  <rect width="1200" height="630" fill="url(#violet-glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <path d="M805 0C870 90 948 139 1040 146C1130 153 1191 205 1224 302" stroke="#B873FF" stroke-opacity="0.16" stroke-width="52" stroke-linecap="round"/>
+  <path d="M-20 488C82 421 186 410 292 455C401 502 500 493 590 428" stroke="#3DE1E8" stroke-opacity="0.11" stroke-width="46" stroke-linecap="round"/>
+  <g transform="translate(84 140)">
+    <rect width="256" height="256" rx="56" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="3"/>
+    <path d="M48 198L99.6 78.4C104.2 67.8 119.8 67.8 124.4 78.4L176 198" stroke="url(#brand-stroke)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M75.5 157.5H148.5" stroke="#F6F4F0" stroke-opacity="0.92" stroke-width="13" stroke-linecap="round"/>
+    <path d="M149 101H186M186 101V138" stroke="#3DE1E8" stroke-opacity="0.84" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="186" cy="138" r="12" fill="#3DE1E8"/>
+    <circle cx="37" cy="193" r="10" fill="#F5B73D"/>
+  </g>
+  <g transform="translate(390 169)">
+    <text x="0" y="55" fill="#F6F4F0" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="600" letter-spacing="0">Angerona<tspan fill="#3DE1E8">Labs</tspan></text>
+    <text x="2" y="103" fill="#F6F4F0" fill-opacity="0.48" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="5">SECURITY RESEARCH</text>
+    <text x="0" y="184" fill="#F6F4F0" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="400" letter-spacing="0">AI-assisted reverse engineering</text>
+    <text x="0" y="238" fill="#F6F4F0" fill-opacity="0.68" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400" letter-spacing="0">Evidence-driven binary analysis for security teams.</text>
+  </g>
+</svg>

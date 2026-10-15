@@ -1,0 +1,1150 @@
+{
+  "address": "9WnF2wgHWaRYaQWwxe6mfJF7m1WMs1WKQQygLteV8ye5",
+  "metadata": {
+    "name": "synthetic_review_fixture",
+    "version": "1.0.0",
+    "description": "Source-generated parser fixture; not a deployed program or credential."
+  },
+  "instructions": [
+    {
+      "name": "instruction_00",
+      "discriminator": [
+        226,
+        104,
+        20,
+        222,
+        211,
+        17,
+        68,
+        175
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_01",
+      "discriminator": [
+        133,
+        28,
+        156,
+        221,
+        103,
+        18,
+        161,
+        111
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_02",
+      "discriminator": [
+        211,
+        238,
+        137,
+        7,
+        62,
+        7,
+        46,
+        38
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_03",
+      "discriminator": [
+        28,
+        25,
+        58,
+        120,
+        93,
+        188,
+        75,
+        146
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_04",
+      "discriminator": [
+        98,
+        50,
+        48,
+        145,
+        244,
+        121,
+        206,
+        192
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_05",
+      "discriminator": [
+        176,
+        240,
+        67,
+        74,
+        57,
+        101,
+        90,
+        88
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_06",
+      "discriminator": [
+        163,
+        244,
+        229,
+        84,
+        67,
+        240,
+        233,
+        75
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_07",
+      "discriminator": [
+        234,
+        188,
+        179,
+        43,
+        52,
+        254,
+        175,
+        53
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_08",
+      "discriminator": [
+        68,
+        156,
+        120,
+        193,
+        62,
+        106,
+        236,
+        37
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_09",
+      "discriminator": [
+        218,
+        46,
+        21,
+        197,
+        223,
+        247,
+        232,
+        155
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_10",
+      "discriminator": [
+        171,
+        102,
+        140,
+        77,
+        103,
+        14,
+        110,
+        17
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_11",
+      "discriminator": [
+        96,
+        178,
+        100,
+        111,
+        22,
+        53,
+        136,
+        73
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_12",
+      "discriminator": [
+        235,
+        60,
+        190,
+        130,
+        169,
+        6,
+        80,
+        52
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_13",
+      "discriminator": [
+        13,
+        181,
+        138,
+        132,
+        214,
+        51,
+        240,
+        24
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_14",
+      "discriminator": [
+        74,
+        212,
+        231,
+        142,
+        210,
+        98,
+        71,
+        47
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_15",
+      "discriminator": [
+        89,
+        200,
+        173,
+        107,
+        197,
+        160,
+        110,
+        210
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_16",
+      "discriminator": [
+        247,
+        1,
+        82,
+        164,
+        127,
+        240,
+        246,
+        227
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_17",
+      "discriminator": [
+        29,
+        185,
+        106,
+        130,
+        120,
+        170,
+        198,
+        23
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_18",
+      "discriminator": [
+        164,
+        67,
+        119,
+        202,
+        159,
+        15,
+        227,
+        219
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_19",
+      "discriminator": [
+        194,
+        184,
+        170,
+        228,
+        165,
+        88,
+        208,
+        245
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_20",
+      "discriminator": [
+        83,
+        106,
+        16,
+        249,
+        148,
+        89,
+        193,
+        244
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_21",
+      "discriminator": [
+        214,
+        8,
+        201,
+        196,
+        118,
+        218,
+        241,
+        211
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_22",
+      "discriminator": [
+        238,
+        51,
+        101,
+        233,
+        44,
+        58,
+        186,
+        3
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_23",
+      "discriminator": [
+        250,
+        43,
+        166,
+        70,
+        19,
+        242,
+        115,
+        175
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_24",
+      "discriminator": [
+        247,
+        178,
+        148,
+        197,
+        155,
+        45,
+        83,
+        11
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_25",
+      "discriminator": [
+        7,
+        146,
+        2,
+        66,
+        62,
+        179,
+        68,
+        227
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_26",
+      "discriminator": [
+        111,
+        194,
+        40,
+        116,
+        87,
+        217,
+        60,
+        114
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_27",
+      "discriminator": [
+        121,
+        168,
+        202,
+        93,
+        20,
+        32,
+        126,
+        26
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_28",
+      "discriminator": [
+        84,
+        213,
+        102,
+        191,
+        148,
+        103,
+        7,
+        60
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_29",
+      "discriminator": [
+        162,
+        217,
+        31,
+        197,
+        195,
+        201,
+        62,
+        87
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_30",
+      "discriminator": [
+        88,
+        61,
+        150,
+        111,
+        77,
+        234,
+        30,
+        237
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_31",
+      "discriminator": [
+        165,
+        23,
+        165,
+        240,
+        115,
+        116,
+        248,
+        110
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_32",
+      "discriminator": [
+        78,
+        62,
+        131,
+        23,
+        97,
+        158,
+        100,
+        180
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_33",
+      "discriminator": [
+        59,
+        235,
+        82,
+        83,
+        192,
+        125,
+        144,
+        192
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_34",
+      "discriminator": [
+        101,
+        4,
+        224,
+        5,
+        108,
+        198,
+        15,
+        167
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_35",
+      "discriminator": [
+        8,
+        76,
+        206,
+        70,
+        111,
+        96,
+        171,
+        250
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_36",
+      "discriminator": [
+        131,
+        156,
+        66,
+        184,
+        75,
+        66,
+        152,
+        8
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_37",
+      "discriminator": [
+        143,
+        93,
+        236,
+        197,
+        205,
+        194,
+        116,
+        158
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_38",
+      "discriminator": [
+        93,
+        211,
+        232,
+        78,
+        255,
+        162,
+        2,
+        204
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_39",
+      "discriminator": [
+        101,
+        81,
+        18,
+        198,
+        74,
+        155,
+        97,
+        129
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_40",
+      "discriminator": [
+        14,
+        73,
+        243,
+        54,
+        66,
+        186,
+        196,
+        113
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_41",
+      "discriminator": [
+        144,
+        40,
+        103,
+        48,
+        204,
+        56,
+        72,
+        245
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_42",
+      "discriminator": [
+        162,
+        51,
+        242,
+        106,
+        97,
+        106,
+        109,
+        246
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_43",
+      "discriminator": [
+        59,
+        149,
+        243,
+        33,
+        137,
+        173,
+        131,
+        188
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_44",
+      "discriminator": [
+        175,
+        7,
+        33,
+        154,
+        164,
+        83,
+        115,
+        231
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_45",
+      "discriminator": [
+        178,
+        64,
+        201,
+        74,
+        177,
+        163,
+        1,
+        226
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_46",
+      "discriminator": [
+        6,
+        252,
+        240,
+        27,
+        140,
+        13,
+        254,
+        209
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_47",
+      "discriminator": [
+        227,
+        250,
+        141,
+        85,
+        137,
+        215,
+        201,
+        207
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_48",
+      "discriminator": [
+        19,
+        218,
+        128,
+        48,
+        97,
+        24,
+        118,
+        188
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_49",
+      "discriminator": [
+        139,
+        55,
+        24,
+        58,
+        54,
+        62,
+        7,
+        251
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_50",
+      "discriminator": [
+        0,
+        243,
+        107,
+        0,
+        180,
+        4,
+        138,
+        78
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_51",
+      "discriminator": [
+        176,
+        78,
+        70,
+        20,
+        232,
+        22,
+        38,
+        73
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_52",
+      "discriminator": [
+        187,
+        32,
+        83,
+        53,
+        91,
+        64,
+        82,
+        234
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_53",
+      "discriminator": [
+        6,
+        193,
+        241,
+        138,
+        50,
+        199,
+        0,
+        103
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_54",
+      "discriminator": [
+        131,
+        128,
+        212,
+        71,
+        27,
+        140,
+        126,
+        122
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_55",
+      "discriminator": [
+        21,
+        67,
+        14,
+        35,
+        182,
+        163,
+        122,
+        145
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_56",
+      "discriminator": [
+        62,
+        0,
+        188,
+        229,
+        225,
+        31,
+        80,
+        17
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_57",
+      "discriminator": [
+        89,
+        212,
+        242,
+        215,
+        158,
+        95,
+        27,
+        84
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_58",
+      "discriminator": [
+        138,
+        106,
+        222,
+        254,
+        159,
+        120,
+        96,
+        12
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_59",
+      "discriminator": [
+        16,
+        71,
+        58,
+        20,
+        41,
+        31,
+        215,
+        106
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_60",
+      "discriminator": [
+        37,
+        20,
+        192,
+        190,
+        180,
+        63,
+        120,
+        245
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_61",
+      "discriminator": [
+        65,
+        133,
+        0,
+        57,
+        171,
+        196,
+        119,
+        225
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_62",
+      "discriminator": [
+        22,
+        198,
+        153,
+        178,
+        119,
+        23,
+        29,
+        135
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_63",
+      "discriminator": [
+        70,
+        172,
+        245,
+        75,
+        183,
+        40,
+        28,
+        72
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_64",
+      "discriminator": [
+        67,
+        174,
+        216,
+        166,
+        65,
+        155,
+        224,
+        195
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_65",
+      "discriminator": [
+        122,
+        226,
+        88,
+        115,
+        32,
+        178,
+        48,
+        182
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_66",
+      "discriminator": [
+        76,
+        83,
+        35,
+        69,
+        142,
+        44,
+        121,
+        2
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_67",
+      "discriminator": [
+        195,
+        106,
+        140,
+        6,
+        190,
+        132,
+        239,
+        61
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_68",
+      "discriminator": [
+        94,
+        162,
+        248,
+        253,
+        0,
+        87,
+        205,
+        72
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_69",
+      "discriminator": [
+        17,
+        34,
+        82,
+        51,
+        80,
+        133,
+        87,
+        59
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_70",
+      "discriminator": [
+        14,
+        163,
+        14,
+        12,
+        7,
+        235,
+        1,
+        31
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_71",
+      "discriminator": [
+        193,
+        0,
+        31,
+        182,
+        182,
+        168,
+        82,
+        59
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_72",
+      "discriminator": [
+        29,
+        185,
+        10,
+        201,
+        255,
+        163,
+        153,
+        9
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_73",
+      "discriminator": [
+        135,
+        196,
+        79,
+        230,
+        226,
+        206,
+        81,
+        211
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_74",
+      "discriminator": [
+        160,
+        3,
+        131,
+        102,
+        239,
+        46,
+        194,
+        136
+      ],
+      "accounts": [],
+      "args": []
+    },
+    {
+      "name": "instruction_75",
+      "discriminator": [
+        92,
+        99,
+        67,
+        215,
+        240,
+        242,
+        194,
+        45
+      ],
+      "accounts": [],
+      "args": []
+    }
+  ]
+}

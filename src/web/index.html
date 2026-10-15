@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angerona - AI Binary Security Workspace</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚙</span>
+      <span class="title">Angerona</span>
+      <span class="sub">AI binary security workspace</span>
+    </div>
+    <div class="top-actions">
+      <button id="newRunBtn" class="btn primary">＋ New run</button>
+      <button id="refreshBtn" class="btn">↻ Refresh</button>
+    </div>
+  </header>
+
+  <main id="view">
+    <!-- RUN LIST -->
+    <section id="listView">
+      <div class="toolbar">
+        <h2>Runs</h2>
+        <span id="engineBadges" class="badges"></span>
+      </div>
+      <div id="runsTable" class="runs-table">
+        <div class="runs-row runs-head">
+          <div>Status</div><div>Target</div><div>Engine</div><div>Agent</div><div>Started</div>
+          <div>Workers</div><div>Coverage</div><div>Last output</div>
+        </div>
+        <div id="activeRuns" class="active-runs"></div>
+        <div id="runsBody"></div>
+      </div>
+    </section>
+
+    <!-- RUN DETAIL (hidden until a run is opened) -->
+    <section id="detailView" hidden>
+      <div class="toolbar">
+        <button id="backBtn" class="btn">← Back</button>
+        <h2 id="detailTitle"></h2>
+        <span id="detailStatus" class="status-pill"></span>
+        <div id="detailActions" class="detail-actions"></div>
+      </div>
+      <div id="detailMeta" class="detail-meta"></div>
+
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="live">Live stream</button>
+        <button class="tab" data-tab="trace">Observability</button>
+        <button class="tab" data-tab="docs">Docs</button>
+        <button class="tab" data-tab="code">Code</button>
+        <button class="tab" data-tab="workers">Workers</button>
+        <button class="tab" data-tab="artifacts">Artifacts</button>
+        <button class="tab" data-tab="raw">Raw / Files</button>
+      </div>
+
+      <div id="tab-overview" class="tab-panel active"></div>
+      <div id="tab-live" class="tab-panel"></div>
+      <div id="tab-trace" class="tab-panel"></div>
+      <div id="tab-docs" class="tab-panel"></div>
+      <div id="tab-code" class="tab-panel"></div>
+      <div id="tab-workers" class="tab-panel"></div>
+      <div id="tab-artifacts" class="tab-panel"></div>
+      <div id="tab-raw" class="tab-panel"></div>
+
+      <!-- file viewer overlay -->
+      <div id="fileViewer" class="file-viewer" hidden>
+        <div class="fv-head">
+          <span id="fvPath" class="fv-path"></span>
+          <span id="fvMeta" class="fv-meta"></span>
+          <button id="fvClose" class="btn">✕ Close</button>
+        </div>
+        <pre id="fvContent" class="fv-content"></pre>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- NEW RUN MODAL -->
+<div id="newRunModal" class="modal" hidden>
+  <div class="modal-card">
+    <div class="modal-head"><h3 id="modalTitle">Start a new analysis run</h3><button id="modalClose" class="btn">✕</button></div>
+    <div class="modal-body">
+      <label>Target binary
+        <select id="fBinary"></select>
+      </label>
+      <label>Selected target path
+        <div class="path-picker-row">
+          <input id="fBinaryCustom" type="text" placeholder="/path/to/binary">
+          <button id="browseTargetBtn" class="btn" type="button">Browse</button>
+        </div>
+      </label>
+      <div class="grid2">
+        <label>Engine
+          <select id="fEngine"><option value="ida">IDA Pro</option><option value="ghidra">Ghidra</option></select>
+        </label>
+        <label>Agent
+          <select id="fAgent"><option value="claude">claude</option><option value="codex">codex</option></select>
+        </label>
+        <label>Pinned model (required for exact resume)
+          <input id="fModel" placeholder="provider model ID" autocomplete="off">
+        </label>
+        <label>Anchor IDL (optional)
+          <input id="fAnchorIdl" placeholder="/path/to/idl.json" autocomplete="off">
+        </label>
+        <label>Similarity corpora (optional, one path per line)
+          <textarea id="fSimilarityCorpora" rows="2" placeholder="/path/to/named-export/code"></textarea>
+        </label>
+        <label>Max rounds
+          <input id="fRounds" type="number" value="2" min="1" max="5">
+        </label>
+        <label>Max parallel workers
+          <input id="fParallel" type="number" value="3" min="1" max="8">
+        </label>
+      </div>
+      <label>Objective (optional)
+        <textarea id="fObjective" rows="2" placeholder="e.g. Find the crypto and key handling."></textarea>
+      </label>
+      <label class="check"><input id="fSandbox" type="checkbox"> Sandbox parse step (no-network bwrap)</label>
+      <div id="startError" class="error" hidden></div>
+    </div>
+    <div class="modal-foot">
+      <button id="startRunBtn" class="btn primary">Start run</button>
+    </div>
+  </div>
+</div>
+
+<!-- FILE PICKER MODAL -->
+<div id="filePickerModal" class="modal" hidden>
+  <div class="modal-card modal-wide">
+    <div class="modal-head">
+      <h3>Select target file</h3>
+      <button id="filePickerClose" class="btn">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="file-picker-top">
+        <button id="filePickerUp" class="btn" type="button">↑</button>
+        <input id="filePickerPath" class="mono" type="text" spellcheck="false">
+        <button id="filePickerGo" class="btn" type="button">Go</button>
+      </div>
+      <div id="filePickerRoots" class="file-picker-roots"></div>
+      <input id="filePickerFilter" type="search" placeholder="Filter files">
+      <div id="filePickerList" class="file-picker-list"></div>
+      <div id="filePickerError" class="error" hidden></div>
+    </div>
+    <div class="modal-foot file-picker-foot">
+      <span id="filePickerSelected" class="mono muted"></span>
+      <button id="filePickerChoose" class="btn primary" type="button" disabled>Select file</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "functions": ["main", "invoke", "Doubler::apply", "Base::~Base"],
+  "symbols": ["invoke", "Doubler::apply"],
+  "cfg_edges": []
+}

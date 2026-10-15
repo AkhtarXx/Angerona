@@ -1,0 +1,51 @@
+{
+  "schema_version": "angerona.benchmark-matrix/v1",
+  "scope": {
+    "formats": ["elf"],
+    "architectures": ["x86_64"],
+    "languages": ["c", "cpp"],
+    "ai_agent_evaluation": false,
+    "note": "This matrix measures static engine extraction only; it is not a cross-platform or AI-analysis benchmark."
+  },
+  "thresholds": {
+    "function_recall": 0.9,
+    "symbol_precision": 0.95,
+    "cfg_edge_recall": 0.85,
+    "crashes": 0
+  },
+  "cases": [
+    {
+      "case_id": "c-gcc-o0-pie",
+      "source": "sources/control_flow.c",
+      "language": "c",
+      "compiler": "gcc",
+      "flags": ["-O0", "-fPIE", "-pie"],
+      "expected_format": "elf",
+      "expected_architecture": "x86_64",
+      "oracle": "oracles/control_flow.json",
+      "tags": ["cfg", "switch", "pie"]
+    },
+    {
+      "case_id": "c-clang-o2-stripped",
+      "source": "sources/control_flow.c",
+      "language": "c",
+      "compiler": "clang",
+      "flags": ["-O2", "-s"],
+      "expected_format": "elf",
+      "expected_architecture": "x86_64",
+      "oracle": "oracles/control_flow_stripped.json",
+      "tags": ["optimized", "stripped", "indirect-call"]
+    },
+    {
+      "case_id": "cpp-gcc-rtti",
+      "source": "sources/rtti.cpp",
+      "language": "cpp",
+      "compiler": "g++",
+      "flags": ["-O1", "-fno-inline"],
+      "expected_format": "elf",
+      "expected_architecture": "x86_64",
+      "oracle": "oracles/rtti.json",
+      "tags": ["cpp", "rtti", "vtable", "exceptions"]
+    }
+  ]
+}

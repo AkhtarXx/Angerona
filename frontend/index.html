@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AngeronaLabs — AI-assisted reverse engineering for security teams."
+    />
+    <meta name="theme-color" content="#080418" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AngeronaLabs" />
+    <meta
+      property="og:description"
+      content="AI-assisted reverse engineering and evidence-driven binary analysis for security teams."
+    />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AngeronaLabs" />
+    <meta
+      name="twitter:description"
+      content="AI-assisted reverse engineering and evidence-driven binary analysis for security teams."
+    />
+    <meta name="twitter:image" content="/og-image.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>AngeronaLabs | AI-Assisted Reverse Engineering</title>
+
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <!-- Self-hosted body fonts — preloaded so the browser can start the
+         network requests before the CSS is parsed. -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/geist-sans-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/geist-sans-500.woff2" crossorigin />
+    <!-- Load only the two display weights we actually use (400 + 600).
+         Fallback metrics are tuned in index.css so no CLS happens on swap. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap"
+      />
+    </noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

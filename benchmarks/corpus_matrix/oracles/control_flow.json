@@ -1,0 +1,5 @@
+{
+  "functions": ["main", "dispatch", "add_one", "sub_one"],
+  "symbols": ["main", "dispatch"],
+  "cfg_edges": []
+}

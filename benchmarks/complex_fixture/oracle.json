@@ -1,0 +1,494 @@
+{
+  "fixture_version": 4,
+  "expected_strings": [
+    "ANGERONA_COMPLEX_FIXTURE_v4",
+    "/api/v1/telemetry",
+    "AUTH_OK",
+    "AUTH_FAIL",
+    "xor-processor",
+    "rotate-processor",
+    "audited-processor",
+    "audit-vmi",
+    "virtual-audited-processor",
+    "audit-virtual-base",
+    "deep-virtual",
+    "audit-layer",
+    "virtual-audit-layer",
+    "deep-virtual-processor",
+    "audit-deep-virtual",
+    "deep-layer",
+    "unsafe-copy",
+    "unreachable benchmark exception",
+    "fixture-error:%s"
+  ],
+  "expected_function_tokens": [
+    "checksum32",
+    "parse_packet",
+    "indirect_pipeline",
+    "recursive_score",
+    "dispatch_command",
+    "transform_buffer",
+    "authenticate",
+    "benchmark_unsafe_copy",
+    "read_layer_name",
+    "run_fixture",
+    "main"
+  ],
+  "expected_import_tokens": [
+    "strcpy",
+    "strcmp",
+    "puts",
+    "printf"
+  ],
+  "expected_sink_tokens": [
+    "strcpy",
+    "benchmark_unsafe_copy"
+  ],
+  "expected_reachable_sink_tokens": [
+    "__printf_chk",
+    "__fprintf_chk",
+    "memcpy",
+    "strcpy"
+  ],
+  "expected_program_roles": [
+    "process_entry",
+    "program_main"
+  ],
+  "expected_user_referenced_strings": [
+    "ANGERONA_COMPLEX_FIXTURE_v4",
+    "/api/v1/telemetry",
+    "AUTH_OK",
+    "AUTH_FAIL",
+    "xor-processor",
+    "rotate-processor",
+    "audited-processor",
+    "audit-vmi",
+    "virtual-audited-processor",
+    "audit-virtual-base",
+    "deep-virtual",
+    "audit-layer",
+    "virtual-audit-layer",
+    "deep-virtual-processor",
+    "audit-deep-virtual",
+    "deep-layer",
+    "unsafe-copy",
+    "unreachable benchmark exception",
+    "fixture-error:%s"
+  ],
+  "expected_cpp_class_tokens": [
+    "XorProcessor",
+    "RotateProcessor",
+    "Auditable",
+    "AuditedProcessor",
+    "VirtualAuditedProcessor",
+    "VirtualAuditLayer",
+    "DeepVirtualProcessor"
+  ],
+  "expected_cpp_classes": [
+    "fixture::Processor",
+    "fixture::Auditable",
+    "fixture::XorProcessor",
+    "fixture::RotateProcessor",
+    "fixture::AuditedProcessor",
+    "fixture::VirtualAuditedProcessor",
+    "fixture::VirtualAuditLayer",
+    "fixture::DeepVirtualProcessor"
+  ],
+  "expected_cpp_inheritance": [
+    {
+      "parent": "fixture::Processor",
+      "child": "fixture::XorProcessor"
+    },
+    {
+      "parent": "fixture::Processor",
+      "child": "fixture::RotateProcessor"
+    },
+    {
+      "parent": "fixture::Processor",
+      "child": "fixture::AuditedProcessor"
+    },
+    {
+      "parent": "fixture::Auditable",
+      "child": "fixture::AuditedProcessor"
+    },
+    {
+      "parent": "fixture::Processor",
+      "child": "fixture::VirtualAuditedProcessor"
+    },
+    {
+      "parent": "fixture::Auditable",
+      "child": "fixture::VirtualAuditedProcessor"
+    },
+    {
+      "parent": "fixture::Auditable",
+      "child": "fixture::VirtualAuditLayer"
+    },
+    {
+      "parent": "fixture::Processor",
+      "child": "fixture::DeepVirtualProcessor"
+    },
+    {
+      "parent": "fixture::VirtualAuditLayer",
+      "child": "fixture::DeepVirtualProcessor"
+    }
+  ],
+  "expected_cpp_base_layouts": [
+    {
+      "class": "fixture::AuditedProcessor",
+      "base": "fixture::Processor",
+      "offset": 0,
+      "offset_kind": "object_offset",
+      "object_offset": 0,
+      "vbase_offset_slot_offset": null,
+      "flags": 2,
+      "is_virtual": false,
+      "is_public": true
+    },
+    {
+      "class": "fixture::AuditedProcessor",
+      "base": "fixture::Auditable",
+      "offset": 8,
+      "offset_kind": "object_offset",
+      "object_offset": 8,
+      "vbase_offset_slot_offset": null,
+      "flags": 2,
+      "is_virtual": false,
+      "is_public": true
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "base": "fixture::Processor",
+      "offset": 0,
+      "offset_kind": "object_offset",
+      "object_offset": 0,
+      "vbase_offset_slot_offset": null,
+      "flags": 2,
+      "is_virtual": false,
+      "is_public": true
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "base": "fixture::Auditable",
+      "offset": -24,
+      "offset_kind": "vbase_offset_slot",
+      "object_offset": null,
+      "vbase_offset_slot_offset": -24,
+      "flags": 3,
+      "is_virtual": true,
+      "is_public": true
+    },
+    {
+      "class": "fixture::VirtualAuditLayer",
+      "base": "fixture::Auditable",
+      "offset": -40,
+      "offset_kind": "vbase_offset_slot",
+      "object_offset": null,
+      "vbase_offset_slot_offset": -40,
+      "flags": 3,
+      "is_virtual": true,
+      "is_public": true
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "base": "fixture::Processor",
+      "offset": 0,
+      "offset_kind": "object_offset",
+      "object_offset": 0,
+      "vbase_offset_slot_offset": null,
+      "flags": 2,
+      "is_virtual": false,
+      "is_public": true
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "base": "fixture::VirtualAuditLayer",
+      "offset": 8,
+      "offset_kind": "object_offset",
+      "object_offset": 8,
+      "vbase_offset_slot_offset": null,
+      "flags": 2,
+      "is_virtual": false,
+      "is_public": true
+    }
+  ],
+  "expected_cpp_vtable_layouts": [
+    {
+      "class": "fixture::XorProcessor",
+      "table_kind": "primary",
+      "offset_to_top": 0,
+      "method_count": 4
+    },
+    {
+      "class": "fixture::RotateProcessor",
+      "table_kind": "primary",
+      "offset_to_top": 0,
+      "method_count": 4
+    },
+    {
+      "class": "fixture::AuditedProcessor",
+      "table_kind": "primary",
+      "offset_to_top": 0,
+      "method_count": 5
+    },
+    {
+      "class": "fixture::AuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "method_count": 3
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "primary",
+      "offset_to_top": 0,
+      "method_count": 5
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -16,
+      "method_count": 3
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "primary",
+      "offset_to_top": 0,
+      "method_count": 6
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "method_count": 4
+    }
+  ],
+  "expected_cpp_vtable_prefix_layouts": [
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "primary",
+      "offset_to_top": 0,
+      "prefix_boundary_reason": "vmi_virtual_base_slots",
+      "entries": [
+        {
+          "relative_to_address_point": -24,
+          "value": 16,
+          "entry_kind": "vbase_offset",
+          "base": "fixture::Auditable"
+        }
+      ]
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -16,
+      "prefix_boundary_reason": "preceding_callable_vtable_slot",
+      "entries": [
+        {
+          "relative_to_address_point": -32,
+          "value": -16,
+          "entry_kind": "vcall_or_vbase_offset",
+          "base": null
+        },
+        {
+          "relative_to_address_point": -24,
+          "value": -16,
+          "entry_kind": "vcall_or_vbase_offset",
+          "base": null
+        }
+      ]
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "prefix_boundary_reason": "preceding_callable_vtable_slot",
+      "entries": [
+        {
+          "relative_to_address_point": -40,
+          "value": 0,
+          "entry_kind": "vcall_or_vbase_offset",
+          "base": null
+        },
+        {
+          "relative_to_address_point": -32,
+          "value": -8,
+          "entry_kind": "vcall_or_vbase_offset",
+          "base": null
+        },
+        {
+          "relative_to_address_point": -24,
+          "value": -8,
+          "entry_kind": "vcall_or_vbase_offset",
+          "base": null
+        }
+      ]
+    }
+  ],
+  "expected_cpp_vtts": [
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "entries": [
+        {
+          "table_kind": "primary",
+          "offset_to_top": 0,
+          "typeinfo_class": "fixture::VirtualAuditedProcessor",
+          "table_role": "complete_object",
+          "leading_null_slot_count": 0
+        },
+        {
+          "table_kind": "secondary",
+          "offset_to_top": -16,
+          "typeinfo_class": "fixture::VirtualAuditedProcessor",
+          "table_role": "complete_object",
+          "leading_null_slot_count": 0
+        }
+      ]
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "entries": [
+        {
+          "table_kind": "primary",
+          "offset_to_top": 0,
+          "typeinfo_class": "fixture::DeepVirtualProcessor",
+          "table_role": "complete_object",
+          "leading_null_slot_count": 0
+        },
+        {
+          "table_kind": "primary",
+          "offset_to_top": 0,
+          "typeinfo_class": "fixture::VirtualAuditLayer",
+          "table_role": "construction",
+          "leading_null_slot_count": 2
+        },
+        {
+          "table_kind": "primary",
+          "offset_to_top": 0,
+          "typeinfo_class": "fixture::VirtualAuditLayer",
+          "table_role": "construction",
+          "leading_null_slot_count": 2
+        },
+        {
+          "table_kind": "secondary",
+          "offset_to_top": -8,
+          "typeinfo_class": "fixture::DeepVirtualProcessor",
+          "table_role": "complete_object",
+          "leading_null_slot_count": 0
+        },
+        {
+          "table_kind": "secondary",
+          "offset_to_top": -8,
+          "typeinfo_class": "fixture::DeepVirtualProcessor",
+          "table_role": "complete_object",
+          "leading_null_slot_count": 0
+        }
+      ]
+    }
+  ],
+  "expected_cpp_this_adjustments": [
+    {
+      "class": "fixture::AuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 0,
+      "kind": "fixed",
+      "fixed_delta": -8
+    },
+    {
+      "class": "fixture::AuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 1,
+      "kind": "fixed",
+      "fixed_delta": -8
+    },
+    {
+      "class": "fixture::AuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 2,
+      "kind": "fixed",
+      "fixed_delta": -8
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -16,
+      "slot_index": 0,
+      "kind": "virtual_vcall",
+      "fixed_delta": 0,
+      "vcall_offset_slot": -24,
+      "vcall_offset_value": -16
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -16,
+      "slot_index": 1,
+      "kind": "virtual_vcall",
+      "fixed_delta": 0,
+      "vcall_offset_slot": -24,
+      "vcall_offset_value": -16
+    },
+    {
+      "class": "fixture::VirtualAuditedProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -16,
+      "slot_index": 2,
+      "kind": "virtual_vcall",
+      "fixed_delta": 0,
+      "vcall_offset_slot": -32,
+      "vcall_offset_value": -16
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 0,
+      "kind": "fixed",
+      "fixed_delta": -8
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 1,
+      "kind": "fixed",
+      "fixed_delta": -8
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 2,
+      "kind": "fixed",
+      "fixed_delta": -8
+    },
+    {
+      "class": "fixture::DeepVirtualProcessor",
+      "table_kind": "secondary",
+      "offset_to_top": -8,
+      "slot_index": 3,
+      "kind": "fixed",
+      "fixed_delta": -8
+    }
+  ],
+  "minimums": {
+    "functions": 20,
+    "strings": 8,
+    "imports": 4,
+    "decompiled_functions": 15,
+    "recovered_signatures": 20,
+    "recovered_structures": 1,
+    "cpp_classes": 8,
+    "cpp_vtables": 8,
+    "cpp_vtable_prefix_entries": 6,
+    "cpp_vtts": 2,
+    "cpp_this_adjustments": 10
+  },
+  "security_expectations": {
+    "pie": true,
+    "nx": true,
+    "relro": "full",
+    "stack_canary": true
+  }
+}
