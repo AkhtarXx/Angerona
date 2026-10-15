@@ -26,6 +26,7 @@ import stat
 import struct
 import subprocess
 import sys
+import sysconfig
 import tempfile
 import threading
 import time
@@ -1811,6 +1812,31 @@ def _bwrap_ro_bind(cmd: list[str], source: Path, dest: Path | None = None) -> No
     cmd.extend(["--ro-bind", str(source), str(dest)])
 
 
+def _bwrap_python_runtime(cmd: list[str]) -> None:
+    """Expose a managed interpreter's stdlib/shared library, not its install root."""
+    base = Path(sys.base_prefix).resolve()
+    stdlib = Path(sysconfig.get_path("stdlib")).resolve()
+    if stdlib.is_relative_to(Path("/usr")) or not stdlib.is_relative_to(base):
+        return
+    library_dir = Path(sysconfig.get_config_var("LIBDIR") or base / "lib").resolve()
+    name = sysconfig.get_config_var("INSTSONAME") or sysconfig.get_config_var("LDLIBRARY")
+    if not isinstance(name, str) or Path(name).name != name or not name.startswith("libpython"):
+        return
+    library = library_dir / name
+    if not stdlib.is_dir() or not library.is_file() or not library_dir.is_relative_to(base):
+        return
+    if not library.resolve().is_relative_to(library_dir):
+        return
+    _bwrap_ro_bind(cmd, stdlib)
+    global_packages = stdlib / "site-packages"
+    if global_packages.is_dir():
+        cmd.extend(["--tmpfs", str(global_packages)])
+    _bwrap_ro_bind(cmd, library, library)
+    # Never retain the host's loader search path. This value is derived from
+    # the running interpreter and contains only the pinned library/stdlib view.
+    cmd.extend(["--setenv", "LD_LIBRARY_PATH", str(library_dir)])
+
+
 def _bwrap_bind(cmd: list[str], source: Path, dest: Path | None = None) -> None:
     source = source.expanduser().resolve()
     if not source.exists():
@@ -2365,6 +2391,7 @@ def _workspace_sandbox_command(
             # ENOENTs when python_real_root is a depth-2 dir (e.g. /tools/bin/
             # python3), whose parent "/" is never bound above.
             sandbox_runner_python = Path("/install/bin") / python_real_executable.name
+    _bwrap_python_runtime(cmd)
     editable_python_paths = [env.get("ANGERONA_IDA_MCP_PYTHON")]
     editable_python_paths.extend(_mcp_config_env_values(args, "ANGERONA_IDA_MCP_PYTHON"))
     for python_path in editable_python_paths:

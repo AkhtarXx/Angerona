@@ -96,6 +96,28 @@ def test_supervised_agent_env_exposes_current_workspace_scope(tmp_path):
     assert "Old workspaces are archives" in env["ANGERONA_OLD_RUNS_POLICY"]
 
 
+def test_managed_python_mounts_exclude_install_siblings_and_global_packages(monkeypatch, tmp_path):
+    base = tmp_path / "managed-python"
+    stdlib = base / "lib" / "python3.11"
+    (stdlib / "site-packages").mkdir(parents=True)
+    library = base / "lib" / "libpython3.11.so.1.0"
+    library.write_bytes(b"runtime-library-fixture")
+    (base / "operator.seed").write_text("private-fixture")
+    monkeypatch.setattr(runtime.sys, "base_prefix", str(base))
+    monkeypatch.setattr(runtime.sysconfig, "get_path", lambda _key: str(stdlib))
+    monkeypatch.setattr(runtime.sysconfig, "get_config_var", lambda key: {
+        "LIBDIR": str(base / "lib"), "INSTSONAME": library.name,
+    }.get(key))
+    command = []
+    runtime._bwrap_python_runtime(command)
+    sources = [command[index + 1] for index, value in enumerate(command[:-2]) if value == "--ro-bind"]
+    assert set(sources) == {str(stdlib), str(library)}
+    assert str(base) not in sources
+    assert str(base / "operator.seed") not in command
+    assert ["--tmpfs", str(stdlib / "site-packages")] in [command[index:index + 2] for index in range(len(command) - 1)]
+    assert ["--setenv", "LD_LIBRARY_PATH", str(base / "lib")] in [command[index:index + 3] for index in range(len(command) - 2)]
+
+
 def test_trusted_sandbox_preparation_does_not_consume_provider_timeout(monkeypatch, tmp_path):
     def prepare(args, **kwargs):
         time.sleep(0.6)
